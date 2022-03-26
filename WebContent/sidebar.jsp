@@ -47,6 +47,28 @@
 					</li>
 
 					<li><a href="#"><span class="glyphicon glyphicon-signal"></span> Link</a></li>
+					<!-- Dropdown-->
+					<li class="panel panel-default" id="dropdown">
+						<a data-toggle="collapse" href="#dropdown-lvl4">
+							<span class="glyphicon glyphicon-user"></span> Bid <span class="caret"></span>
+						</a>
+
+						<!-- Dropdown level 1 -->
+						<div id="dropdown-lvl4" class="panel-collapse collapse">
+							<div class="panel-body">
+								<ul class="nav navbar-nav">
+									<li><a href="Bid.jsp">All bid </a></li>
+									<li><a href="Bid.jsp">Accepted bid</a></li>
+
+								</ul>
+							</div>
+						</div>
+					</li>
+
+					
+					
+					
+					
 					<li><a href="User_management.jsp"><span class="glyphicon glyphicon-user"></span>User Management</a></li>
 					
 

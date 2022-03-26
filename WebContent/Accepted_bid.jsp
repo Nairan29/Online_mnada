@@ -19,21 +19,34 @@
   		<div class="col-md-10 content">
   			  <div class="panel panel-default">
 	<div class="panel-heading">
-		User Management
+		Bid
 	</div>
-	<div class="panel-body">
 	
-	<!-- Button trigger modal -->
-<button data-toggle="modal" data-target="#squarespaceModal" class="btn btn-primary center-block" style="float:right">Add Category</button>
-
+	<div class="panel-body">
+	<div class="row">
+            	<div class="col-md-4">
+            		<div class="form-group">
+                <label for="exampleInputEmail1">Product</label>
+                <input type="text" class="form-control" name="categoryname" id="exampleInputEmail1" placeholder="Enter product">
+              </div>
+            	</div>
+            	<div class="col-md-4">
+            		<div class="form-group">
+                <label for="exampleInputEmail1">Farmer</label>
+                <input type="text" class="form-control" name="categoryname" id="exampleInputEmail1" placeholder="Enter farmer">
+              </div>
+            	</div>
+            	
+            	</div>
 	<table class="table table-striped">
   		<thead>
     <tr>
       <th scope="col">#</th>
     
-      <th scope="col">Category Name</th>
-      <th scope="col">Description</th>
-      <th scope="col">Status</th>     
+      <th scope="col">Customer Name</th>
+      <th scope="col">Product Name]</th>
+      <th scope="col">Price</th>     
+      <th scope="col">Date</th>
       <th scope="col">Action</th> 
       
     </tr>
@@ -56,6 +69,7 @@
     
       <td><%= cname%></td>
       <td><%= cdesc%></td>
+      <td><%= cstatus%></td>
       <td><%= cstatus%></td>
       <td>
       <button type="button" class="btn btn-primary" >

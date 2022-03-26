@@ -31,39 +31,35 @@
     <tr>
       <th scope="col">#</th>
     
-      <th scope="col">FullName</th>
-      <th scope="col">Phone</th>
-      <th scope="col">Status</th>
-      <th scope="col">Role</th>
-      <th scope="col">Action</th> 
-      
+      <th scope="col">Sub Category Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Category Name</th>
+      <th scope="col">status</th>
+      <th scope="col">Action</th>
+           
     </tr>
   </thead>
   <tbody>
     <%
   try {
 	Connection con=DbConnection.createConnection();
-	String loginInsertQuery = "SELECT * from login";   
+	String loginInsertQuery = "SELECT * from subcategory,category Where category.categoryid = subcategory.subcategoryid";   
 	Statement SelectStatement = con.createStatement();
 	ResultSet resultSet = SelectStatement.executeQuery(loginInsertQuery);
 	while (resultSet.next()) {
-		String Firstname = resultSet.getString("firstname");
-		String Middlename = resultSet.getString("middlename");	
-		String Lastname = resultSet.getString("lastname");	
-		String Status = resultSet.getString("status");	
-		String Role = resultSet.getString("role");	
-		String Username = resultSet.getString("username");
-//		String Address = resultSet.getString("address");
-		String Phone = resultSet.getString("phonenumber");
+		String subcname = resultSet.getString("subcategoryname");
+		String subcdes = resultSet.getString("description");			
+		String subcstatus = resultSet.getString("status");	
+		String cname = resultSet.getString("categoryname");	
+		
 %>
     <tr>
       <th scope="row">1</th>
     
-      <td><%= Firstname+" "+Middlename+" "+Lastname%></td>
-      <td><%= Phone%></td>
-  
-      <td><%= Status%></td>
-      <td><%= Role%></td>
+      <td><%= subcname%></td>
+      <td><%= subcdes%></td>  
+      <td><%= cname%></td>
+       <td><%=subcstatus%></td>     
       <td>
       <button type="button" class="btn btn-primary" >
   		<i class="glyphicon glyphicon-pencil"></i>
