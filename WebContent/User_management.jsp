@@ -4,6 +4,7 @@
 <%@page import="java.sql.Statement"%>
 <%@page import="Connection.DbConnection"%>
 <%@page import="java.sql.Connection"%>
+<%@page import="java.util.*"%>
 <%@ include file="navbar.jsp"%>
 
 <div class="container-fluid main-container">
@@ -130,7 +131,7 @@
                 <label for="exampleInputEmail1">Role</label>
                 <select name="role" class="form-control" id="exampleInputEmail1">
                 	<option>Select Role</option>
-	                	<option value="Administartor">Administartor</option>
+	                	<option value="Administrator">Administrator</option>
 	                	<option value="Farmer">Farmer</option>
 	                	<option vlaue="Customer">Customer</option>                	
                 </select> 
