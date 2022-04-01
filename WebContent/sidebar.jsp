@@ -97,7 +97,7 @@
 						<div id="dropdown-lvl2" class="panel-collapse collapse">
 							<div class="panel-body">
 								<ul class="nav navbar-nav">
-									<li><a href="All_product.jsp">My product </a></li>
+									<li><a href="my_product.jsp">My product </a></li>
 									<li><a href="Product_image.jsp">Product image</a></li>
 
 								</ul>
