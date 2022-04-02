@@ -22,7 +22,9 @@
 		Bid Timer
 	</div>
 	
+	
 	<div class="panel-body">
+	<button data-toggle="modal" data-target="#squarespaceModal" class="btn btn-primary center-block" style="float:right">Add Bid</button>
 	
 
 	<table class="table table-striped">
@@ -96,23 +98,47 @@
             <div class="row">
             	<div class="col-md-12">
             		<div class="form-group">
-                <label for="exampleInputEmail1">Category</label>
-                <input type="text" class="form-control" name="categoryname" id="exampleInputEmail1" placeholder="Enter category">
+                <label for="exampleInputEmail1">Product name</label>
+                <select name="sid" class="form-control" id="exampleInputEmail1">
+                	<option>Enter your product</option>
+                	<%
+  try {
+	Connection con=DbConnection.createConnection();
+	String loginInsertQuery = "SELECT * from subcategory";   
+	Statement SelectStatement = con.createStatement();
+	ResultSet resultSet = SelectStatement.executeQuery(loginInsertQuery);
+	while (resultSet.next()) {
+		String subcid = resultSet.getString("subcategoryid");
+		String subcname = resultSet.getString("subcategoryname");	
+		
+%>
+	                	<option value="<%=subcid %>"><%=subcname%></option>   
+	                	 <%
+    }
+  } catch (Exception e) {
+	  e.printStackTrace();
+  }
+  
+  %>             	
+                </select> 
               </div>
             	</div>
             	
-            	</div>
             	
-            	<div class="row">
+            	
             	<div class="col-md-12">
             		<div class="form-group">
-                <label for="exampleInputEmail1">Description</label>
-               <textarea name="description" class="form-control" rows="4" cols="50"></textarea>
+                <label for="exampleInputEmail1">Form date</label>
+                <input type="date" class="form-control" name="mname" id="exampleInputEmail1" placeholder="Enter date">
               </div>
             	</div>
-            	
-            </div>
-             
+            	<div class="col-md-12">
+            		<div class="form-group">
+                <label for="exampleInputEmail1">To date</label>
+                <input type="date" class="form-control" name="mname" id="exampleInputEmail1" placeholder="Enter date">
+              </div>
+            	</div>
+            	</div>
               <button type="submit" class="btn btn-default">Submit</button>
             </form>
 

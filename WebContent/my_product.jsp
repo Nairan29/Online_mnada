@@ -5,7 +5,6 @@
 <%@page import="Connection.DbConnection"%>
 <%@page import="java.sql.Connection"%>
 <%@ include file="navbar.jsp"%>
-
 <div class="container-fluid main-container">
   		<div class="col-md-2 sidebar">
   			<div class="row">
@@ -31,10 +30,9 @@
     <tr>
       <th scope="col">#</th>
     
-      <th scope="col">FullName</th>
-      <th scope="col">Phone</th>
-      <th scope="col">Status</th>
-      <th scope="col">Role</th>
+      <th scope="col">Product name</th>
+      <th scope="col">Subcategory id</th>
+      <th scope="col">Product description</th>     
       <th scope="col">Action</th> 
       
     </tr>
@@ -43,27 +41,23 @@
     <%
   try {
 	Connection con=DbConnection.createConnection();
-	String loginInsertQuery = "SELECT * from login";   
+	String loginInsertQuery = "SELECT * from product,subcategory WHERE product.subcategoryid=subcategory.subcategoryid  and email='"+httpSession.getAttribute("email")+"'";   
 	Statement SelectStatement = con.createStatement();
 	ResultSet resultSet = SelectStatement.executeQuery(loginInsertQuery);
 	while (resultSet.next()) {
-		String Firstname = resultSet.getString("firstname");
-		String Middlename = resultSet.getString("middlename");	
-		String Lastname = resultSet.getString("lastname");	
-		String Status = resultSet.getString("status");	
-		String Role = resultSet.getString("role");	
-		String Username = resultSet.getString("username");
-//		String Address = resultSet.getString("address");
-		String Phone = resultSet.getString("phonenumber");
+		String pname = resultSet.getString("productname");
+		String subcid = resultSet.getString("subcategoryname");	
+		String pdesc = resultSet.getString("productdescription");	
+		
 %>
     <tr>
       <th scope="row">1</th>
     
-      <td><%= Firstname+" "+Middlename+" "+Lastname%></td>
-      <td><%= Phone%></td>
+      <td><%= pname%></td>
+      <td><%= subcid%></td>
   
-      <td><%= Status%></td>
-      <td><%= Role%></td>
+      <td><%= pdesc%></td>
+     
       <td>
       <button type="button" class="btn btn-primary" >
   		<i class="glyphicon glyphicon-pencil"></i>
@@ -102,12 +96,34 @@
             		<div class="form-group">
                 <label for="exampleInputEmail1">Product name</label>
                 <input type="text" class="form-control" name="pname" id="exampleInputEmail1" placeholder="Enter productname">
+                <input type="hidden" class="form-control" name="email" value="<%=httpSession.getAttribute("email") %>"  >
               </div>
             	</div>
             	<div class="col-md-12">
             		<div class="form-group">
-                <label for="exampleInputEmail1">Category id</label>
-                <input type="text" class="form-control" name="cid" id="exampleInputEmail1" placeholder="Enter categoryid">
+                <label for="exampleInputEmail1">subcategory name</label>
+                <select name="sid" class="form-control" id="exampleInputEmail1">
+                	<option>Select name</option>
+                	<%
+  try {
+	Connection con=DbConnection.createConnection();
+	String loginInsertQuery = "SELECT * from subcategory";   
+	Statement SelectStatement = con.createStatement();
+	ResultSet resultSet = SelectStatement.executeQuery(loginInsertQuery);
+	while (resultSet.next()) {
+		String subcid = resultSet.getString("subcategoryid");
+		String subcname = resultSet.getString("subcategoryname");	
+		
+%>
+	                	<option value="<%=subcid %>"><%=subcname%></option>   
+	                	 <%
+    }
+  } catch (Exception e) {
+	  e.printStackTrace();
+  }
+  
+  %>             	
+                </select> 
               </div>
             	</div>
             	<div class="col-md-12">

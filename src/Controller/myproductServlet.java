@@ -51,13 +51,14 @@ public class myproductServlet extends HttpServlet {
 		String prname = request.getParameter("pname");		
 		String scatid = request.getParameter("sid");
 		String prdesc = request.getParameter("pdesc");
-		String update = request.getParameter("udate");
+		String eml = request.getParameter("email");
+		
 	
 		try {
 			
 			Connection con=DbConnection.createConnection();
 			//Data zinaingizwa kweny login
-			String query = "INSERT INTO product (productname,subcategoryid,productdescription,uploaded_date) VALUES ('"+prname+"','"+scatid+"','"+prdesc+"','"+update+"')";   
+			String query = "INSERT INTO product (productname,subcategoryid,productdescription,email) VALUES ('"+prname+"','"+scatid+"','"+prdesc+"','"+eml+"')";   
 				Statement st1=con.createStatement();
 				int product =st1.executeUpdate(query);
 				if(product == 1){

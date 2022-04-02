@@ -1,11 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+httpSession.ge<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
      <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Statement"%>
 <%@page import="Connection.DbConnection"%>
 <%@page import="java.sql.Connection"%>
 <%@ include file="navbar.jsp"%>
-
 <div class="container-fluid main-container">
   		<div class="col-md-2 sidebar">
   			<div class="row">
@@ -31,10 +30,9 @@
     <tr>
       <th scope="col">#</th>
     
-      <th scope="col">FullName</th>
-      <th scope="col">Phone</th>
-      <th scope="col">Status</th>
-      <th scope="col">Role</th>
+      <th scope="col">Product name</th>
+      <th scope="col">Subcategory id</th>
+      <th scope="col">Product description</th>     
       <th scope="col">Action</th> 
       
     </tr>
@@ -43,27 +41,23 @@
     <%
   try {
 	Connection con=DbConnection.createConnection();
-	String loginInsertQuery = "SELECT * from login";   
+	String loginInsertQuery = "SELECT * from product,subcategory WHERE product.subcategoryid=subcategory.subcategoryid ";   
 	Statement SelectStatement = con.createStatement();
 	ResultSet resultSet = SelectStatement.executeQuery(loginInsertQuery);
 	while (resultSet.next()) {
-		String Firstname = resultSet.getString("firstname");
-		String Middlename = resultSet.getString("middlename");	
-		String Lastname = resultSet.getString("lastname");	
-		String Status = resultSet.getString("status");	
-		String Role = resultSet.getString("role");	
-		String Username = resultSet.getString("username");
-//		String Address = resultSet.getString("address");
-		String Phone = resultSet.getString("phonenumber");
+		String pname = resultSet.getString("productname");
+		String subcid = resultSet.getString("subcategoryname");	
+		String pdesc = resultSet.getString("productdescription");	
+		
 %>
     <tr>
       <th scope="row">1</th>
     
-      <td><%= Firstname+" "+Middlename+" "+Lastname%></td>
-      <td><%= Phone%></td>
+      <td><%= pname%></td>
+      <td><%= subcid%></td>
   
-      <td><%= Status%></td>
-      <td><%= Role%></td>
+      <td><%= pdesc%></td>
+     
       <td>
       <button type="button" class="btn btn-primary" >
   		<i class="glyphicon glyphicon-pencil"></i>
@@ -91,68 +85,56 @@
 	<div class="modal-content">
 		<div class="modal-header">
 			<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
-			<h3 class="modal-title" id="lineModalLabel">My Modal</h3>
+			<h3 class="modal-title" id="lineModalLabel">ADD PRODUCT</h3>
 		</div>
 		<div class="modal-body">
 			
             <!-- content goes here -->
-			<form action="UserServlet" method="post">
+			<form action="myproductServlet" method="post">
             <div class="row">
-            	<div class="col-md-4">
+            	<div class="col-md-12">
             		<div class="form-group">
-                <label for="exampleInputEmail1">FirstName</label>
-                <input type="text" class="form-control" name="fname" id="exampleInputEmail1" placeholder="Enter firstname">
+                <label for="exampleInputEmail1">Product name</label>
+                <input type="text" class="form-control" name="pname" id="exampleInputEmail1" placeholder="Enter productname">
+                <input type="hidden" class="form-control" name="email" value="<%=httpSession.getAttribute("email") %>"  >
               </div>
             	</div>
-            	<div class="col-md-4">
+            	<div class="col-md-12">
             		<div class="form-group">
-                <label for="exampleInputEmail1">MiddleName</label>
-                <input type="text" class="form-control" name="mname" id="exampleInputEmail1" placeholder="Enter middlename">
-              </div>
-            	</div>
-            	<div class="col-md-4">
-            		<div class="form-group">
-                <label for="exampleInputEmail1">LastName</label>
-                <input type="text" class="form-control" name="lname" id="exampleInputEmail1" placeholder="Enter lastname">
-              </div>
-            	</div>
-            	</div>
-            	
-            	<div class="row">
-            	<div class="col-md-6">
-            		<div class="form-group">
-                <label for="exampleInputEmail1">Email</label>
-                <input type="text" class="form-control" name="email" id="exampleInputEmail1" placeholder="Enter email">
-              </div>
-            	</div>
-            	<div class="col-md-6">
-            		<div class="form-group">
-                <label for="exampleInputEmail1">Role</label>
-                <select name="role" class="form-control" id="exampleInputEmail1">
-                	<option>Select Role</option>
-	                	<option value="Administartor">Administartor</option>
-	                	<option value="Farmer">Farmer</option>
-	                	<option vlaue="Customer">Customer</option>                	
+                <label for="exampleInputEmail1">subcategory name</label>
+                <select name="sid" class="form-control" id="exampleInputEmail1">
+                	<option>Select name</option>
+                	<%
+  try {
+	Connection con=DbConnection.createConnection();
+	String loginInsertQuery = "SELECT * from subcategory";   
+	Statement SelectStatement = con.createStatement();
+	ResultSet resultSet = SelectStatement.executeQuery(loginInsertQuery);
+	while (resultSet.next()) {
+		String subcid = resultSet.getString("subcategoryid");
+		String subcname = resultSet.getString("subcategoryname");	
+		
+%>
+	                	<option value="<%=subcid %>"><%=subcname%></option>   
+	                	 <%
+    }
+  } catch (Exception e) {
+	  e.printStackTrace();
+  }
+  
+  %>             	
                 </select> 
               </div>
             	</div>
-
-            	
-            	<div class="col-md-6">
+            	<div class="col-md-12">
             		<div class="form-group">
-                <label for="exampleInputEmail1">Address</label>
-                <input type="text" class="form-control" name="address" id="exampleInputEmail1" placeholder="Enter address">
+                <label for="exampleInputEmail1">Product description</label>               
+                <textarea name="pdesc" class="form-control" rows="4" cols="50"></textarea>
               </div>
             	</div>
-            	
-            	<div class="col-md-6">
-            		<div class="form-group">
-                <label for="exampleInputEmail1">Phone</label>
-                <input type="text" class="form-control" name="Phone" id="exampleInputEmail1" placeholder="Enter phone">
-              </div>
             	</div>
             	
-            </div>
+            	
              
               <button type="submit" class="btn btn-default">Submit</button>
             </form>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 01, 2022 at 12:36 PM
+-- Generation Time: Apr 02, 2022 at 11:40 AM
 -- Server version: 10.1.29-MariaDB
 -- PHP Version: 7.1.12
 
@@ -128,8 +128,16 @@ CREATE TABLE `product` (
   `productname` varchar(30) NOT NULL,
   `subcategoryid` int(30) NOT NULL,
   `productdescription` varchar(30) NOT NULL,
-  `uploaded_date` date NOT NULL
+  `uploaded_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `email` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `product`
+--
+
+INSERT INTO `product` (`productid`, `productname`, `subcategoryid`, `productdescription`, `uploaded_date`, `email`) VALUES
+(3, 'suzuki', 1, 'this is white in colour', '2022-04-02 08:21:10', '1984nairan@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -264,7 +272,7 @@ ALTER TABLE `login`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `productid` int(30) NOT NULL AUTO_INCREMENT;
+  MODIFY `productid` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `productimage`
