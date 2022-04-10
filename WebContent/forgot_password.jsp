@@ -13,7 +13,9 @@
     <link rel="stylesheet" href="css/index.css">
     <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
 </head>
-<body>```                                                         
+<body class="background"style="background-image:url('pic/im10.webp');"> 
+<div class="card" style="width:max-content;margin:0 auto;margin-top:50px">
+  <div class="card-body">                                                                                                          
    <form action="login" method= "post">
    <div class="my-class">
        <h1>RESET PASSWORD</h1>
@@ -30,11 +32,11 @@
 
       
        <div class="form-group">
-         <button type="submit" class="btn btn-primary"> Submit</button>
+         <button type="submit" class="btn btn-primary"style="background-color:darkgreen";> Submit</button>
        </div>
        </form>
        <div class="form-group">
-        <p>Already have an account <a href="">Sign in now</a></p>
+        <p>Already have an account <a href=""style="color:navy;">Sign in now</a></p>
        </div>
      
    </div>

@@ -7,13 +7,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="font-awesome/css/font-awesome.css">
     <title>LOGIN</title>
-    <link rel="stylesheet" href="css/index.css">
+    
     <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
 </head>
-<body>```                                                         
+<body class="whole-body" style="background-image:url('pic/walpaper.jpg');"> 
+<div class="card" style="width:max-content;margin:0 auto;margin-top:50px">
+  <div class="card-body">                                                        
    <form action="login" method= "post">
    <div class="my-class">
        <h1>LOGIN FORM</h1>
@@ -34,17 +37,19 @@
        </div>
 
        <div class="form-group">
-         <a href="forgot_password.jsp">forgot password?</a>
+         <a href="forgot_password.jsp"style="color:navy">forgot password?</a>
        </div>
 
        <div class="form-group">
-         <button type="submit" class="btn btn-primary"> Login</button>
+         <button type="submit" class="btn btn-primary" style="background-color:darkgreen;"> Login</button>
        </div>
        </form>
        <div class="form-group">
-        <p>Not a member? <a href="">Sign up now</a></p>
+        <p>Not a member? <a href=""style="color:navy">Sign up now</a></p>
        </div>
      
+   </div>
+   </div>
    </div>
 </body>
 </html>

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<div class="side-menu">
+<div class="side-menu" style="margin-top:-20px;">
 		<nav class="navbar navbar-default" role="navigation">
 			<!-- Main Menu -->
 			<div class="side-menu-container">

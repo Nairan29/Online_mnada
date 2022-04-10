@@ -13,8 +13,8 @@
 	
 		<!-- Home Content Start hERE -->
 	
-  		<div class="col-md-10 content">
-  			  <div class="panel panel-default">
+  		<div class="col-md-10 content" style="width:2000x;margin-left:-12px;">
+  			  <div class="panel"style="margin-top:-15px;">
 	<div class="panel-heading">
 		Dashboard
 	</div>
