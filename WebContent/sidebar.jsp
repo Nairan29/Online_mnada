@@ -9,16 +9,13 @@
 		    // By setting the variable in session, it can be forwarded
 		    if(httpSession.getAttribute("Role").equals("Administrator")){
 			%>
-				<ul class="nav navbar-nav">
-					<li class="active"><a href="admin_interface.jsp"><span class="glyphicon glyphicon-dashboard"></span> Dashboard</a></li>
-					<li><a href=""><span class="glyphicon glyphicon-plane"></span> Active Link</a></li>
-					<li><a href="#"><span class="glyphicon glyphicon-cloud"></span> Link</a></li>
-
-					
+				<ul class="nav navbar-nav"style="background-color:darkorange;">
+					<li class="active"><a href="admin_interface.jsp"><span class="glyphicon glyphicon-dashboard""></span> Dashboard</a></li>
+						
 					<!-- Dropdown-->
 					<li class="panel panel-default" id="dropdown">
 						<a data-toggle="collapse" href="#dropdown-lvl2">
-							<span class="glyphicon glyphicon-user"></span> Product management <span class="caret"></span>
+							<span class="glyphicon glyphicon-user""></span> Product management <span class="caret"></span>
 						</a>
 
 						<!-- Dropdown level 1 -->
@@ -51,7 +48,6 @@
 						</div>
 					</li>
 
-					<li><a href="#"><span class="glyphicon glyphicon-signal"></span> Link</a></li>
 					<!-- Dropdown-->
 					<li class="panel panel-default" id="dropdown">
 						<a data-toggle="collapse" href="#dropdown-lvl4">

@@ -21,7 +21,7 @@
 <script src="js/toggle.js"></script>
 
 <!------ Include the above in your HEAD tag ---------->
-<nav class="navbar navbar-default navbar-static-top" style="background-color:peru;">
+<nav class="navbar navbar-default navbar-static-top" style="background-color:forestgreen;">
     <div class="container-fluid">
 		<!-- Brand and toggle get grouped for better mobile display -->
 		<div class="navbar-header">
@@ -38,7 +38,7 @@
 			<!--  <h2 id=""  style="float:left;" class="title">ONLINE AUCTION</h2> -->
 			<a class="navbar-brand" href="#" style="margin-top:-20px;" >
 			<div class="row">
-				<img  class="logo" src="pic/im18.jpg" style="border-radius:300%;height:65px" alt="no image found">
+				<img  class="logo" src="pic/im23.jpg" style="border-radius:300%;height:65px" alt="no image found">
 				<small style="color:black;"><b>ONLINE AUCTIONING</b></small>
 			</div>
 			  

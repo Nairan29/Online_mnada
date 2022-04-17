@@ -3,7 +3,7 @@
 <footer class="pull-left footer">
   			<p class="col-md-12">
   				<hr class="divider">
-  				Copyright &COPY; 2015 <a href="£">Online Auctioning</a>
+  				Copyright &COPY; 2015 <a href="£"style="color:red;">Online Auctioning</a>
   			</p>
   		</footer>
   	</div>

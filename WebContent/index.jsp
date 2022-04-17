@@ -14,7 +14,7 @@
     
     <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
 </head>
-<body class="whole-body" style="background-image:url('pic/walpaper.jpg');"> 
+<body class="whole-body" style="background-image:url('pic/im37.webp');background-repeat:no-repeat;"> 
 <div class="card" style="width:max-content;margin:0 auto;margin-top:50px">
   <div class="card-body">                                                        
    <form action="login" method= "post">
@@ -41,7 +41,7 @@
        </div>
 
        <div class="form-group">
-         <button type="submit" class="btn btn-primary" style="background-color:darkgreen;"> Login</button>
+         <button type="submit" class="btn btn-primary" style="background-color:forestgreen;"> Login</button>
        </div>
        </form>
        <div class="form-group">

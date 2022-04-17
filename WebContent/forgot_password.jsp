@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="css/index.css">
     <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
 </head>
-<body class="background"style="background-image:url('pic/im10.webp');"> 
+<body class="background"style="background-image:url('pic/im10.webp');background-repeat:no-repeat;"> 
 <div class="card" style="width:max-content;margin:0 auto;margin-top:50px">
   <div class="card-body">                                                                                                          
    <form action="login" method= "post">
@@ -32,7 +32,7 @@
 
       
        <div class="form-group">
-         <button type="submit" class="btn btn-primary"style="background-color:darkgreen";> Submit</button>
+         <button type="submit" class="btn btn-primary"style="background-color:forestgreen";> Submit</button>
        </div>
        </form>
        <div class="form-group">

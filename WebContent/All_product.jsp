@@ -9,7 +9,7 @@ httpSession.ge<%@ page language="java" contentType="text/html; charset=ISO-8859-
   		<div class="col-md-2 sidebar">
   			<div class="row">
 	<!-- uncomment code for absolute positioning tweek see top comment in css -->
-	<div class="absolute-wrapper"> </div>
+	<div class="absolute-wrapper"> 
 	<%@include file="sidebar.jsp" %>
 	
 	
@@ -23,7 +23,7 @@ httpSession.ge<%@ page language="java" contentType="text/html; charset=ISO-8859-
 	<div class="panel-body">
 	
 	<!-- Button trigger modal -->
-<button data-toggle="modal" data-target="#squarespaceModal" class="btn btn-primary center-block" style="float:right">Add Product</button>
+<button data-toggle="modal" data-target="#squarespaceModal" class="btn btn-primary center-block" style="float:right;background-color:forestgreen;">Add Product</button>
 
 	<table class="table table-striped">
   		<thead>

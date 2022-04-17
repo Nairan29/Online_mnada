@@ -20,13 +20,13 @@
 	
   		<div class="col-md-10 content">
   			  <div class="panel panel-default">
-	<div class="panel-heading">
+	<div class="panel-heading"style="background-color:red;">
 		User Management
 	</div>
 	<div class="panel-body">
 	
 	<!-- Button trigger modal -->
-<button data-toggle="modal" data-target="#squarespaceModal" class="btn btn-primary center-block" style="float:right">Add sub category</button>
+<button data-toggle="modal" data-target="#squarespaceModal" class="btn btn-primary center-block" style="float:right;background-color:forestgreen;">Add sub category</button>
 
 	<table class="table table-striped">
   		<thead>
