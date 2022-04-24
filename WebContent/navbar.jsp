@@ -38,7 +38,7 @@
 			<!--  <h2 id=""  style="float:left;" class="title">ONLINE AUCTION</h2> -->
 			<a class="navbar-brand" href="#" style="margin-top:-20px;" >
 			<div class="row">
-				<img  class="logo" src="pic/im23.jpg" style="border-radius:300%;height:65px" alt="no image found">
+				<img  class="logo" src="pic/im18.jpg" style="border-radius:300%;height:65px" alt="no image found">
 				<small style="color:black;"><b>ONLINE AUCTIONING</b></small>
 			</div>
 			  
@@ -57,7 +57,7 @@
 					<img alt="" src="pic/im19.jpg"style=width:30px;">
 						<span class="caret"></span></a>
 						<ul class="dropdown-menu" role="menu">
-							<li class="dropdown-header">SETTINGS</li>
+							<li class="dropdown-header" style="font-weight:bold;">SETTINGS</li>
 							<li class=""><a href="#">
 			<%
 			HttpSession httpSessions = request.getSession();
@@ -65,9 +65,10 @@
 		   out.print(httpSessions.getAttribute("Role"));
 			%>
 							</a></li>	
-							<li class=""><a href="#">Profile</a></li>
+							<li class=""><a href="profile.jsp">Profile</a></li>
+							<li><a href="Reset_password.jsp">Reset password</a></li>
 							<li class="divider"></li>
-							<li><a href="#">Logout</a></li>
+							<li><a href="logoutServlet">Logout</a></li>
 						</ul>
 					</li>
 				</ul>

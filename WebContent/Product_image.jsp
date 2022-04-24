@@ -18,7 +18,7 @@
 	
   		<div class="col-md-10 content">
   			  <div class="panel panel-default">
-	<div class="panel-heading"style="background-color:red;">
+	<div class="panel-heading"style="background-color:lightskyblue;">
 		Product images
 	</div>
 	<div class="panel-body">

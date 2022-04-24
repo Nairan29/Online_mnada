@@ -18,8 +18,8 @@
 	
   		<div class="col-md-10 content">
   			  <div class="panel panel-default">
-	<div class="panel-heading">
-		Bid
+	<div class="panel-heading" style="background-color:lightskyblue">
+		  Accepted bid
 	</div>
 	
 	<div class="panel-body">

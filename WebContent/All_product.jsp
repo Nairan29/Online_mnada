@@ -1,4 +1,4 @@
-httpSession.ge<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
      <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Statement"%>
@@ -9,7 +9,7 @@ httpSession.ge<%@ page language="java" contentType="text/html; charset=ISO-8859-
   		<div class="col-md-2 sidebar">
   			<div class="row">
 	<!-- uncomment code for absolute positioning tweek see top comment in css -->
-	<div class="absolute-wrapper"> 
+	<div class="absolute-wrapper"> </div>
 	<%@include file="sidebar.jsp" %>
 	
 	
@@ -17,13 +17,13 @@ httpSession.ge<%@ page language="java" contentType="text/html; charset=ISO-8859-
 	
   		<div class="col-md-10 content">
   			  <div class="panel panel-default">
-	<div class="panel-heading">
+	<div class="panel-heading"style="background-color:lightskyblue">
 		All Product
 	</div>
 	<div class="panel-body">
 	
 	<!-- Button trigger modal -->
-<button data-toggle="modal" data-target="#squarespaceModal" class="btn btn-primary center-block" style="float:right;background-color:forestgreen;">Add Product</button>
+<button data-toggle="modal" data-target="#squarespaceModal" class="btn btn-primary center-block" style="float:right;background-color:forestgreen">Add Product</button>
 
 	<table class="table table-striped">
   		<thead>

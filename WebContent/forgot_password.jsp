@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="css/index.css">
     <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
 </head>
-<body class="background"style="background-image:url('pic/im10.webp');background-repeat:no-repeat;"> 
+<body class="background"style="background-image:url('pic/im41.jpg');"> 
 <div class="card" style="width:max-content;margin:0 auto;margin-top:50px">
   <div class="card-body">                                                                                                          
    <form action="login" method= "post">

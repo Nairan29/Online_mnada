@@ -14,7 +14,7 @@
     
     <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
 </head>
-<body class="whole-body" style="background-image:url('pic/im37.webp');background-repeat:no-repeat;"> 
+<body class="whole-body" style="background-image:url('pic/im43.jpg');background-repeat:no-repeat;background-attachment:fixed;background-size:100% 100%;"> 
 <div class="card" style="width:max-content;margin:0 auto;margin-top:50px">
   <div class="card-body">                                                        
    <form action="login" method= "post">
@@ -24,6 +24,8 @@
         <img src="./pic/logo.png" alt="logo" class="centre">
        </div>
        
+       
+       </div>
        <div class="form-group">
          <label for="username"><b>Username</b></label>
          <input type="text" id="Username"  placeholder="Enter your Username" 

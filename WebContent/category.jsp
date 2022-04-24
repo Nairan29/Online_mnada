@@ -18,8 +18,8 @@
 	
   		<div class="col-md-10 content">
   			  <div class="panel panel-default">
-	<div class="panel-heading"style="background-color:red;">
-		User Management
+	<div class="panel-heading"style="background-color:lightskyblue;">
+		My category
 	</div>
 	<div class="panel-body">
 	
