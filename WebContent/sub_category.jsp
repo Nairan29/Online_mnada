@@ -52,7 +52,8 @@
 		String subcname = resultSet.getString("subcategoryname");
 		String subcdes = resultSet.getString("description");			
 		String subcstatus = resultSet.getString("status");	
-		String cname = resultSet.getString("categoryname");	
+		String cname = resultSet.getString("categoryname");
+		String subid =resultSet.getString("subcategoryid");
 		
 %>
     <tr>
@@ -63,13 +64,96 @@
       <td><%= cname%></td>
        <td><%=subcstatus%></td>     
       <td>
-      <button type="button" class="btn btn-primary" >
+      <button  data-toggle="modal" data-target="#<%=subid%>" type="button" class="btn btn-primary" >
   		<i class="glyphicon glyphicon-pencil"></i>
 	</button>
 	<button type="button" class="btn btn-primary">
 	 	<i class="glyphicon glyphicon-trash"></i>
 	</button>
       </td>
+      <div class="modal fade" id="<%=subid%>" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+	<div class="modal-content">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+			<h3 class="modal-title" id="lineModalLabel">Add sub category</h3>
+		</div>
+		<div class="modal-body">
+			
+            <!-- content goes here -->
+			<form action="subcategory" method="post">
+            <div class="row">
+            <div class="col-md-12">
+            		<div class="form-group">
+                <label for="exampleInputEmail1">category</label>
+                <select name="categoryid" class="form-control" id="exampleInputEmail1">
+                	<option value ="">Select category</option>
+	                
+	                	
+                 <%
+  try {
+	String categoryQuery = "SELECT * from category";   
+	Statement SelStatement = con.createStatement();
+	ResultSet resultSets = SelectStatement.executeQuery(loginInsertQuery);
+	while (resultSets.next()) {
+		int number=1;
+		String categoryid = resultSet.getString("categoryid");
+		String categoryname = resultSet.getString("categoryname");	
+	
+%>
+                
+                <option value=" <%= categoryid%>" > <%= categoryname%></option>
+                    <%
+    }
+  } catch (Exception e) {
+	  e.printStackTrace();
+  }
+  
+  %>
+	                	               	
+                </select> 
+              </div>
+            	</div>
+            	
+            	<div class="col-md-12">
+            		<div class="form-group">
+                <label for="exampleInputEmail1">sub category</label>
+                <input type="text" class="form-control" name="subcategoryname" id="exampleInputEmail1" placeholder="Enter sub category">
+              </div>
+            	</div>
+            
+            	
+            	<div class="col-md-12">
+            		<div class="form-group">
+                <label for="exampleInputEmail1">Description</label>
+                <textarea name="description" class="form-control" rows="4" cols="50"></textarea>
+              </div>
+            	</div>
+            	
+            </div>
+             
+              <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+
+		</div>
+		<div class="modal-footer">
+			<div class="btn-group btn-group-justified" role="group" aria-label="group button">
+				<div class="btn-group" role="group">
+					<button type="button" class="btn btn-default" data-dismiss="modal"  role="button">Close</button>
+				</div>
+				<div class="btn-group btn-delete hidden" role="group">
+					<button type="button" id="delImage" class="btn btn-default btn-hover-red" data-dismiss="modal"  role="button">Delete</button>
+				</div>
+				<div class="btn-group" role="group">
+					<button type="button" id="saveImage" class="btn btn-default btn-hover-green" data-action="save" role="button">Save</button>
+				</div>
+			</div>
+		</div>
+	</div>
+  </div>
+  <!-- Insert Modal Start -->
+	</div>
+</div>
 
     </tr>
       <%
