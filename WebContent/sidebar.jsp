@@ -58,7 +58,7 @@
 						<div id="dropdown-lvl4" class="panel-collapse collapse">
 							<div class="panel-body">
 								<ul class="nav navbar-nav">
-									<li><a href="Bid.jsp">All bid </a></li>
+									<li><a href="All bid.jsp">All bid </a></li>
 									<li><a href="Accepted_bid.jsp">Accepted bid</a></li>
 
 								</ul>

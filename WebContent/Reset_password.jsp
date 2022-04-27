@@ -18,64 +18,44 @@
 <div class="col-md-10 content">
   			  <div class="panel panel-default">
 	<div class="panel-heading" style="background-color:lightskyblue;">
-		Profile
+		Password
 	</div>
 <div class="panel-body">
 
 <div class="row">
   <div class="col-md-5 content">
-  <img alt="" src="pic/user login.jpg" style="width:290px;"> 
+  <img alt="" src="pic/im44.jpg" style="width:290px;"> 
  </div>
  
 <div class="col-md-7 content">
 <div class="row">
-<h1>USER INFORMATION</h1>
-<div class="col-md-4">
+<h1>RESET PASSWORD</h1>
+<div class="col-md-6">
       <div class="form-group">
-          <label for="profile">FirstName</label>
-          <input type="text" class="form-control" name="fname" id="pname" placeholder="Enter firstname">
+          <label for="password">OLD PASSWORD</label>
+          <input type="password" class="form-control" name="pass" id="opass" placeholder="Enter old password">
        </div>    
 </div>
-<div class="col-md-4">
+
+<div class="col-md-6">
       <div class="form-group">
-          <label for="profile">MiddleName</label>
-          <input type="text" class="form-control" name="fname" id="pmname" placeholder="Enter middlename">
+          <label for="password">NEW PASSWORD</label>
+          <input type="password" class="form-control" name="pass" id="npass" placeholder="Enter new password">
        </div>
        
        </div>
-       
-<div class="col-md-4">
+     
+<div class="col-md-6">
       <div class="form-group">        
-          <label for="profile">LastName</label>
-          <input type="text" class="form-control" name="fname" id="plname" placeholder="Enter lastname">
+          <label for="password">CONFIRMED PASSWORD</label>
+          <input type="password" class="form-control" name="pass" id="cpass" placeholder="Confirmed password">
        </div>    
 </div>
 </div>
 
 
-<div class="row">
-<div class="col-md-4">
-      <div class="form-group">
-          <label for="profile">Age</label>
-          <input type="number" class="form-control" name="fname" id="page" placeholder="Enter age">
-       </div>    
-</div>
-<div class="col-md-4">
-      <div class="form-group">
-          <label for="profile">Email</label>
-          <input type="email" class="form-control" name="fname" id="pemail" placeholder="Enter email">
-       </div>
-       
-       </div>
-       
-<div class="col-md-4">
-      <div class="form-group">        
-          <label for="profile">Address</label>
-          <input type="text" class="form-control" name="fname" id="paddress" placeholder="Enter address">
-       </div>    
-</div>
-</div>
-   <button type="update" class="btn btn-default" style="color:white;background-color:forestgreen;">Update</button>
+
+   <button type="reset password" class="btn btn-default" style="color:white;background-color:forestgreen;">reset password</button>
 
 
  

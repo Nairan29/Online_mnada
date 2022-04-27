@@ -66,7 +66,7 @@
 			%>
 							</a></li>	
 							<li class=""><a href="profile.jsp">Profile</a></li>
-							<li><a href="Reset_password.jsp">Reset password</a></li>
+							<li class=""><a href="Reset_password.jsp">Reset password</a></li>
 							<li class="divider"></li>
 							<li><a href="logoutServlet">Logout</a></li>
 						</ul>

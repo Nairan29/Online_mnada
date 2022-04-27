@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 02, 2022 at 11:40 AM
+-- Generation Time: Apr 27, 2022 at 11:51 AM
 -- Server version: 10.1.29-MariaDB
 -- PHP Version: 7.1.12
 
@@ -47,7 +47,7 @@ CREATE TABLE `bid` (
 CREATE TABLE `category` (
   `categoryid` int(30) NOT NULL,
   `categoryname` varchar(30) NOT NULL,
-  `description` varchar(30) NOT NULL,
+  `description` varchar(250) NOT NULL,
   `status` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -56,8 +56,9 @@ CREATE TABLE `category` (
 --
 
 INSERT INTO `category` (`categoryid`, `categoryname`, `description`, `status`) VALUES
-(1, 'null', 'null', 'active'),
-(2, 'four wheels vehcle', 'mpuuuuzi feysal', 'active');
+(1, 'vehicle zanziabr', 'hp  available in zanzibar', 'active'),
+(2, 'house', '3 floor, ', 'active'),
+(3, 'laptop', 'dell available', 'active');
 
 -- --------------------------------------------------------
 
@@ -137,7 +138,8 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`productid`, `productname`, `subcategoryid`, `productdescription`, `uploaded_date`, `email`) VALUES
-(3, 'suzuki', 1, 'this is white in colour', '2022-04-02 08:21:10', '1984nairan@gmail.com');
+(3, 'suzuki', 1, 'this is white in colour', '2022-04-02 08:21:10', '1984nairan@gmail.com'),
+(4, 'New Product', 2, 'This is Product 1', '2022-04-08 09:11:15', '1984nairan@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -248,7 +250,7 @@ ALTER TABLE `bid`
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `categoryid` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `categoryid` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `customer`
@@ -272,7 +274,7 @@ ALTER TABLE `login`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `productid` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `productid` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `productimage`

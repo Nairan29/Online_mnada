@@ -75,16 +75,34 @@
 			<h3 class="modal-title" id="lineModalLabel">Edit category</h3>
 		</div>
 		<div class="modal-body">
-			
+			<%
+  try {
+	
+	String categoryInsertQuery = "SELECT * from category where categoryid='"+idcategory+"'";   
+	Statement SelecStatement = con.createStatement();
+	ResultSet resultsSet = SelecStatement.executeQuery(categoryInsertQuery);
+	while (resultsSet.next()) {
+		String cnamee = resultSet.getString("categoryname");
+		String cdescc = resultSet.getString("description");		
+		String cstatuss = resultSet.getString("status");
+		String idcategoryy = resultSet.getString("categoryid");
+		
+		 
+  
+  
+  %>
+		
             <!-- content goes here -->
-			<form action="category" method="post">
+			<form action="EditCategoryServlet" method="post">
             <div class="row">
             	<div class="col-md-12">
             		<div class="form-group">
                 <label for="exampleInputEmail1">Category</label>
-                <input type="text" class="form-control" name="categoryname" id="exampleInputEmail1" placeholder="Enter category">
+                <input type="text" class="form-control" name="categoryname" value=<%=cnamee %> id="exampleInputEmail1" placeholder="Enter category">
               </div>
             	</div>
+            	
+            	<input type='hidden' value="<%= idcategory%>" name="idcategory">
             	
             	</div>
             	
@@ -92,7 +110,7 @@
             	<div class="col-md-12">
             		<div class="form-group">
                 <label for="exampleInputEmail1">Description</label>
-               <textarea name="description" class="form-control" rows="4" cols="50"></textarea>
+               <textarea name="description" class="form-control" rows="4" cols="50"><%= cdescc %></textarea>
               </div>
             	</div>
             	
@@ -100,6 +118,7 @@
              
               <button type="submit" class="btn btn-default">Submit</button>
             </form>
+    
 
 		</div>
 		<div class="modal-footer">
@@ -116,6 +135,12 @@
 			</div>
 		</div>
 	</div>
+	        <% 
+              }
+  } catch (Exception e) {
+	  e.printStackTrace();
+  }
+			%>
   </div>
   <!-- Insert Modal Start -->
       

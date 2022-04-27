@@ -55,6 +55,8 @@
 		String Username = resultSet.getString("username");
 //		String Address = resultSet.getString("address");
 		String Phone = resultSet.getString("phonenumber");
+		
+		
 %>
     <tr>
       <th scope="row">1</th>
@@ -65,13 +67,24 @@
       <td><%= Status%></td>
       <td><%= Role%></td>
       <td>
-      <button type="button" class="btn btn-primary" >
+       <button type="button" class="btn btn-primary" >
   		<i class="glyphicon glyphicon-pencil"></i>
 	</button>
 	<button type="button" class="btn btn-primary">
 	 	<i class="glyphicon glyphicon-trash"></i>
 	</button>
       </td>
+      <!-- Insert modal Start here-->
+<div class="modal fade" id="squarespaceModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+	<div class="modal-content">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+			<h3 class="modal-title" id="lineModalLabel">My Modal</h3>
+		</div>
+		<div class="modal-body">
+			
+          
 
     </tr>
       <%

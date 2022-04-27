@@ -47,7 +47,8 @@
 	while (resultSet.next()) {
 		String pname = resultSet.getString("productname");
 		String subcid = resultSet.getString("subcategoryname");	
-		String pdesc = resultSet.getString("productdescription");	
+		String pdesc = resultSet.getString("productdescription");
+		String pid = resultSet.getString("productid");
 		
 %>
     <tr>
@@ -59,13 +60,92 @@
       <td><%= pdesc%></td>
      
       <td>
-      <button type="button" class="btn btn-primary" >
+       <button data-toggle="modal" data-target="#<%= pid %>" type="button" class="btn btn-primary" >
   		<i class="glyphicon glyphicon-pencil"></i>
 	</button>
 	<button type="button" class="btn btn-primary">
 	 	<i class="glyphicon glyphicon-trash"></i>
 	</button>
       </td>
+      
+      <div class="modal fade" id="<%= pid %>" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+	<div class="modal-content">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+			<h3 class="modal-title" id="lineModalLabel">Edit product</h3>
+		</div>
+		<div class="modal-body">
+			
+            <!-- content goes here -->
+			<form action="myproductServlet" method="post">
+            <div class="row">
+            	<div class="col-md-12">
+            		<div class="form-group">
+                <label for="exampleInputEmail1">Product name</label>
+                <input type="text" class="form-control" name="pname" id="exampleInputEmail1" placeholder="Enter productname">
+                <input type="hidden" class="form-control" name="email" value="<%=httpSession.getAttribute("email") %>"  >
+              </div>
+            	</div>
+            	<div class="col-md-12">
+            		<div class="form-group">
+                <label for="exampleInputEmail1">subcategory name</label>
+                <select name="sid" class="form-control" id="exampleInputEmail1">
+                	<option>Select name</option>
+                	<%
+  try {
+	Connection conn=DbConnection.createConnection();
+	String productInsertQuery = "SELECT * from subcategory";   
+	Statement SeleStatement = con.createStatement();
+	ResultSet resultSets = SelectStatement.executeQuery(loginInsertQuery);
+	while (resultSet.next()) {
+		String subcaid = resultSet.getString("subcategoryid");
+		String subcname = resultSet.getString("subcategoryname");	
+		
+%>
+	                	<option value="<%=subcid %>"><%=subcname%></option>   
+	                	 <%
+    }
+  } catch (Exception e) {
+	  e.printStackTrace();
+  }
+  
+  %>             	
+                </select> 
+              </div>
+            	</div>
+            	<div class="col-md-12">
+            		<div class="form-group">
+                <label for="exampleInputEmail1">Product description</label>               
+                <textarea name="pdesc" class="form-control" rows="4" cols="50"></textarea>
+              </div>
+            	</div>
+            	</div>
+            	
+            	
+             
+              <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+
+		</div>
+		<div class="modal-footer">
+			<div class="btn-group btn-group-justified" role="group" aria-label="group button">
+				<div class="btn-group" role="group">
+					<button type="button" class="btn btn-default" data-dismiss="modal"  role="button">Close</button>
+				</div>
+				<div class="btn-group btn-delete hidden" role="group">
+					<button type="button" id="delImage" class="btn btn-default btn-hover-red" data-dismiss="modal"  role="button">Delete</button>
+				</div>
+				<div class="btn-group" role="group">
+					<button type="button" id="saveImage" class="btn btn-default btn-hover-green" data-action="save" role="button">Save</button>
+				</div>
+			</div>
+		</div>
+	</div>
+  </div>
+  <!-- Insert Modal Start -->
+	</div>
+</div>
 
     </tr>
       <%
@@ -85,7 +165,7 @@
 	<div class="modal-content">
 		<div class="modal-header">
 			<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
-			<h3 class="modal-title" id="lineModalLabel">ADD PRODUCT</h3>
+			<h3 class="modal-title" id="lineModalLabel">Add product</h3>
 		</div>
 		<div class="modal-body">
 			
