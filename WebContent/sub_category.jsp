@@ -76,12 +76,12 @@
 	<div class="modal-content">
 		<div class="modal-header">
 			<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
-			<h3 class="modal-title" id="lineModalLabel">Add sub category</h3>
+			<h3 class="modal-title" id="lineModalLabel">Edit sub category</h3>
 		</div>
 		<div class="modal-body">
 			
             <!-- content goes here -->
-			<form action="subcategory" method="post">
+			<form action="EditSubcategoryServlet" method="post">
             <div class="row">
             <div class="col-md-12">
             		<div class="form-group">
@@ -94,7 +94,7 @@
   try {
 	String categoryQuery = "SELECT * from category";   
 	Statement SelStatement = con.createStatement();
-	ResultSet resultSets = SelectStatement.executeQuery(loginInsertQuery);
+	ResultSet resultSets = SelStatement.executeQuery(categoryQuery);
 	while (resultSets.next()) {
 		int number=1;
 		String categoryid = resultSet.getString("categoryid");
@@ -121,7 +121,8 @@
                 <input type="text" class="form-control" name="subcategoryname" id="exampleInputEmail1" placeholder="Enter sub category">
               </div>
             	</div>
-            
+            	<input type='hidden' value="<%= subid%>" name="subid">
+            	 
             	
             	<div class="col-md-12">
             		<div class="form-group">
@@ -129,6 +130,7 @@
                 <textarea name="description" class="form-control" rows="4" cols="50"></textarea>
               </div>
             	</div>
+            	
             	
             </div>
              

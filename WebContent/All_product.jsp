@@ -76,16 +76,31 @@
 			<h3 class="modal-title" id="lineModalLabel">Edit product</h3>
 		</div>
 		<div class="modal-body">
+		<%
+  try {
+	
+	String productInsertQuery = "SELECT * from product,subcategory WHERE product.subcategoryid=subcategory.subcategoryid ";   
+	Statement SelStatement = con.createStatement();
+	ResultSet resulttSet = SelStatement.executeQuery(productInsertQuery);
+	while (resulttSet.next()) {
+		String prname = resultSet.getString("productname");
+		String subcatid = resultSet.getString("subcategoryname");	
+		String prodesc = resultSet.getString("productdescription");
+		String proid = resultSet.getString("productid");
+		
+%>
 			
             <!-- content goes here -->
-			<form action="myproductServlet" method="post">
+			<form action="EditAllProductServlet" method="post">
             <div class="row">
             	<div class="col-md-12">
             		<div class="form-group">
                 <label for="exampleInputEmail1">Product name</label>
-                <input type="text" class="form-control" name="pname" id="exampleInputEmail1" placeholder="Enter productname">
+                <input type="text" class="form-control" value="<%=prname %>"  name="pname" id="exampleInputEmail1" placeholder="Enter productname">
                 <input type="hidden" class="form-control" name="email" value="<%=httpSession.getAttribute("email") %>"  >
               </div>
+              
+              <input type='hidden' value="<%= proid%>" name="idproduct">
             	</div>
             	<div class="col-md-12">
             		<div class="form-group">
@@ -94,10 +109,9 @@
                 	<option>Select name</option>
                 	<%
   try {
-	Connection conn=DbConnection.createConnection();
-	String productInsertQuery = "SELECT * from subcategory";   
+	String producttInsertQuery = "SELECT * from subcategory";   
 	Statement SeleStatement = con.createStatement();
-	ResultSet resultSets = SelectStatement.executeQuery(loginInsertQuery);
+	ResultSet resultSets = SeleStatement.executeQuery(loginInsertQuery);
 	while (resultSet.next()) {
 		String subcaid = resultSet.getString("subcategoryid");
 		String subcname = resultSet.getString("subcategoryname");	
@@ -117,15 +131,26 @@
             	<div class="col-md-12">
             		<div class="form-group">
                 <label for="exampleInputEmail1">Product description</label>               
-                <textarea name="pdesc" class="form-control" rows="4" cols="50"></textarea>
+                <textarea name="pdesc" class="form-control" rows="4" cols="50"> <%=prodesc %></textarea>
               </div>
             	</div>
+            	
+            	
+            	
+            	
             	</div>
             	
             	
              
               <button type="submit" class="btn btn-default">Submit</button>
             </form>
+             <%
+    }
+  } catch (Exception e) {
+	  e.printStackTrace();
+  }
+  
+  %>             	
 
 		</div>
 		<div class="modal-footer">
@@ -139,6 +164,7 @@
 				<div class="btn-group" role="group">
 					<button type="button" id="saveImage" class="btn btn-default btn-hover-green" data-action="save" role="button">Save</button>
 				</div>
+				
 			</div>
 		</div>
 	</div>
