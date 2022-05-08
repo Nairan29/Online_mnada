@@ -79,6 +79,23 @@
 			<h3 class="modal-title" id="lineModalLabel">Edit sub category</h3>
 		</div>
 		<div class="modal-body">
+			<%
+  try {
+	
+	String categoryInsertQuery = "SELECT * from subcategory,category where subcategory.categoryid=category.categoryid AND subcategoryid='"+subid+"'";   
+	Statement SelecStatement = con.createStatement();
+	ResultSet resultsSet = SelecStatement.executeQuery(categoryInsertQuery);
+	while (resultsSet.next()) {
+		String scnamee = resultSet.getString("subcategoryname");
+		String scdescc = resultSet.getString("description");		
+		String scstatuss = resultSet.getString("status");
+		String idcategoryy = resultSet.getString("categoryid");
+		String nmcategoryy = resultSet.getString("categoryname");
+  
+		
+		
+  %>
+		
 			
             <!-- content goes here -->
 			<form action="EditSubcategoryServlet" method="post">
@@ -87,6 +104,7 @@
             		<div class="form-group">
                 <label for="exampleInputEmail1">category</label>
                 <select name="categoryid" class="form-control" id="exampleInputEmail1">
+                <option value ="<%= idcategoryy%>"><%= nmcategoryy%></option>
                 	<option value ="">Select category</option>
 	                
 	                	
@@ -118,7 +136,8 @@
             	<div class="col-md-12">
             		<div class="form-group">
                 <label for="exampleInputEmail1">sub category</label>
-                <input type="text" class="form-control" name="subcategoryname" id="exampleInputEmail1" placeholder="Enter sub category">
+                <input type="text" class="form-control" name="subcategoryname"value=<%=scnamee %> id="exampleInputEmail1" placeholder="Enter sub category">
+               
               </div>
             	</div>
             	<input type='hidden' value="<%= subid%>" name="subid">
@@ -126,8 +145,8 @@
             	
             	<div class="col-md-12">
             		<div class="form-group">
-                <label for="exampleInputEmail1">Description</label>
-                <textarea name="description" class="form-control" rows="4" cols="50"></textarea>
+                <label for="exampleInputEmail1">Description</label>               
+                <textarea name="description" class="form-control" rows="4" cols="50"><%= scdescc %></textarea>
               </div>
             	</div>
             	
@@ -150,9 +169,20 @@
 					<button type="button" id="saveImage" class="btn btn-default btn-hover-green" data-action="save" role="button">Save</button>
 				</div>
 			</div>
+			
 		</div>
+		
 	</div>
   </div>
+   <%
+    }
+  } catch (Exception e) {
+	  e.printStackTrace();
+  }
+  
+  %>
+  
+  
   <!-- Insert Modal Start -->
 	</div>
 </div>
@@ -203,7 +233,7 @@
 %>
                 
                 <option value=" <%= categoryid%>" > <%= categoryname%></option>
-                    <%
+    <%
     }
   } catch (Exception e) {
 	  e.printStackTrace();

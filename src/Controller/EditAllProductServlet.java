@@ -55,7 +55,7 @@ public class EditAllProductServlet extends HttpServlet {
 				Statement st1=con.createStatement();
 				int loginInsert =st1.executeUpdate(query);
 				if(loginInsert == 1){
-					response.sendRedirect("category.jsp");
+					response.sendRedirect("All_product.jsp");
 					}else{
 						System.out.println("not success");
 					}

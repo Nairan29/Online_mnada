@@ -41,7 +41,7 @@
     <%
   try {
 	Connection con=DbConnection.createConnection();
-	String loginInsertQuery = "SELECT * from product,subcategory WHERE product.subcategoryid=subcategory.subcategoryid ";   
+	String loginInsertQuery = "SELECT * from product,subcategory WHERE product.subcategoryid = subcategory.subcategoryid ";   
 	Statement SelectStatement = con.createStatement();
 	ResultSet resultSet = SelectStatement.executeQuery(loginInsertQuery);
 	while (resultSet.next()) {
@@ -196,7 +196,7 @@
 		<div class="modal-body">
 			
             <!-- content goes here -->
-			<form action="myproductServlet" method="post">
+			<form action="All_ProductServlet" method="post">
             <div class="row">
             	<div class="col-md-12">
             		<div class="form-group">

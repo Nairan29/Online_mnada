@@ -15,16 +15,16 @@ import javax.servlet.http.HttpServletResponse;
 import Connection.DbConnection;
 
 /**
- * Servlet implementation class BidTimerServlet
+ * Servlet implementation class EditUsermanagementServlet
  */
-@WebServlet("/BidTimerServlet")
-public class BidTimerServlet extends HttpServlet {
+@WebServlet("/EditUsermanagementServlet")
+public class EditUsermanagementServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public BidTimerServlet() {
+    public EditUsermanagementServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -42,22 +42,24 @@ public class BidTimerServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
 		PrintWriter out=response.getWriter();
-		String pname = request.getParameter("productname");		
-		String sdate = request.getParameter("startingprice");
-		String fdate = request.getParameter("formdate");
-		String tdate = request.getParameter("todate");
+		String fnm = request.getParameter("fname");		
+		String mnm = request.getParameter("mname");
+		String lnm = request.getParameter("lname");
+		String userid = request.getParameter("userid");
+		String phon = request.getParameter("Phone");
+		String rol = request.getParameter("role");
 	
 		try {
 			
 			Connection con=DbConnection.createConnection();
 			//Data zinaingizwa kweny login
-			String query = "INSERT INTO bid (productid,price,fromdate,todate,status) VALUES ('"+pname+"','"+sdate+"','fdate','"+tdate+"','active')";   
+			String query = "UPDATE login SET firstname='"+fnm+"',middlename='"+mnm+"',lastname='"+lnm+"',userid='"+userid+"',phonenumber='"+phon+"',role='"+rol+"' WHERE userid='"+userid+"'";
+
 				Statement st1=con.createStatement();
 				int loginInsert =st1.executeUpdate(query);
 				if(loginInsert == 1){
-					response.sendRedirect("category.jsp");
+					response.sendRedirect("User_management.jsp");
 					}else{
 						System.out.println("not success");
 					}
