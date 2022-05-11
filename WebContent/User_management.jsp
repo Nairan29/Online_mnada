@@ -19,15 +19,15 @@
 	
   		<div class="col-md-10 content">
   			  <div class="panel panel-default">
-	<div class="panel-heading">
+	<div class="panel-heading" style=background-color:lightskyblue>
 		User Management
 	</div>
 	<div class="panel-body">
 	
 	<!-- Button trigger modal -->
-<button data-toggle="modal" data-target="#squarespaceModal" class="btn btn-primary center-block" style="float:right">Add User</button>
+<button data-toggle="modal" data-target="#squarespaceModal" class="btn btn-primary center-block" style="float:right;background-color:forestgreen;">Add User</button>
 
-	<table class="table table-striped">
+	<table class="table">
   		<thead>
     <tr>
       <th scope="col">#</th>
@@ -70,7 +70,7 @@
       <button data-toggle="modal" data-target="#<%=usid%>" type="button" class="btn btn-primary" >
   		<i class="glyphicon glyphicon-pencil"></i>
 	</button>
-	<button type="button" class="btn btn-primary">
+	<button type="button" class="btn btn-danger">
 	 	<i class="glyphicon glyphicon-trash"></i>
 	</button>
       </td>
@@ -161,7 +161,7 @@
             	
             </div>
              
-              <button type="submit" class="btn btn-default">Submit</button>
+              <button type="submit" class="btn btn-default"style=background-color:forestgreen;color:white>Submit</button>
             </form>
              <%
     }
@@ -216,22 +216,22 @@
             <div class="row">
             	<div class="col-md-4">
             		<div class="form-group">
-                <label for="exampleInputEmail1">FirstName</label>
-                <input type="text" class="form-control" name="fname" id="exampleInputEmail1" placeholder="Enter email">
+                <label for="firstname">FirstName</label>
+                <input type="text" class="form-control" name="fname" id="firstname" placeholder="Enter firstname">
               </div>
             	</div>
             	
             	
             	<div class="col-md-4">
             		<div class="form-group">
-                <label for="exampleInputEmail1">MiddleName</label>
-                <input type="text" class="form-control" name="mname" id="exampleInputEmail1" placeholder="Enter email">
+                <label for="middlename">MiddleName</label>
+                <input type="text" class="form-control" name="mname" id="middlename" placeholder="Enter middlename">
               </div>
             	</div>
             	<div class="col-md-4">
             		<div class="form-group">
-                <label for="exampleInputEmail1">LastName</label>
-                <input type="text" class="form-control" name="lname" id="exampleInputEmail1" placeholder="Enter email">
+                <label for="lastname">LastName</label>
+                <input type="text" class="form-control" name="lname" id="lastname" placeholder="Enter lastname">
               </div>
             	</div>
             	</div>
@@ -239,14 +239,14 @@
             	<div class="row">
             	<div class="col-md-6">
             		<div class="form-group">
-                <label for="exampleInputEmail1">Email</label>
-                <input type="text" class="form-control" name="email" id="exampleInputEmail1" placeholder="Enter email">
+                <label for="email">Email</label>
+                <input type="text" class="form-control" name="email" id="email" placeholder="Enter email">
               </div>
             	</div>
             	<div class="col-md-6">
             		<div class="form-group">
-                <label for="exampleInputEmail1">Role</label>
-                <select name="role" class="form-control" id="exampleInputEmail1">
+                <label for="role">Role</label>
+                <select name="role" class="form-control" id="role">
                 	<option>Select Role</option>
 	                	<option value="Administrator">Administrator</option>
 	                	<option value="Farmer">Farmer</option>
@@ -258,21 +258,21 @@
             	
             	<div class="col-md-6">
             		<div class="form-group">
-                <label for="exampleInputEmail1">Address</label>
-                <input type="text" class="form-control" name="address" id="exampleInputEmail1" placeholder="Enter email">
+                <label for="address">Address</label>
+                <input type="text" class="form-control" name="address" id="address" placeholder="Enter address">
               </div>
             	</div>
             	
             	<div class="col-md-6">
             		<div class="form-group">
-                <label for="exampleInputEmail1">Phone</label>
-                <input type="text" class="form-control" name="Phone" id="exampleInputEmail1" placeholder="Enter email">
+                <label for="phone">Phone</label>
+                <input type="text" class="form-control" name="Phone" id="phone" placeholder="Enter phone">
               </div>
             	</div>
             	
             </div>
              
-              <button type="submit" class="btn btn-default">Submit</button>
+              <button type="submit" class="btn btn-default" style=background-color:forestgreen;color:white>Submit</button>
             </form>
 
 		</div>

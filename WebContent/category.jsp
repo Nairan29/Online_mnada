@@ -26,7 +26,7 @@
 	<!-- Button trigger modal -->
 <button data-toggle="modal" data-target="#squarespaceModal" class="btn btn-primary center-block" style="float:right;background-color:forestgreen;'">Add Category</button>
 
-	<table class="table table-striped">
+	<table class="table">
   		<thead>
     <tr>
       <th scope="col">#</th>
@@ -62,7 +62,7 @@
       <button data-toggle="modal" data-target="#<%= idcategory%>" type="button" class="btn btn-primary" >
   		<i class="glyphicon glyphicon-pencil"></i>
 	</button>
-	<button type="button" class="btn btn-primary">
+	<button type="button" class="btn btn-danger">
 	 	<i class="glyphicon glyphicon-trash"></i>
 	</button>
       </td>
@@ -159,12 +159,12 @@
 <!-- Insert modal Start here-->
 <div class="modal fade" id="squarespaceModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
   <div class="modal-dialog">
-	<div class="modal-content">
+	<div class="modal-content"style=background-color:lightgrey>
 		<div class="modal-header">
 			<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
 			<h3 class="modal-title" id="lineModalLabel">Add category</h3>
 		</div>
-		<div class="modal-body">
+		<div class="modal-body" style=background-color:lightgrey>
 			
             <!-- content goes here -->
 			<form action="categoryServlet" method="post">
@@ -188,7 +188,7 @@
             	
             </div>
              
-              <button type="submit" class="btn btn-default">Submit</button>
+              <button type="submit" class="btn btn-default" style=background-color:forestgreen;color:white>Submit</button>
             </form>
 
 		</div>

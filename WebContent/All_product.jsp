@@ -25,7 +25,7 @@
 	<!-- Button trigger modal -->
 <button data-toggle="modal" data-target="#squarespaceModal" class="btn btn-primary center-block" style="float:right;background-color:forestgreen">Add Product</button>
 
-	<table class="table table-striped">
+	<table class="table">
   		<thead>
     <tr>
       <th scope="col">#</th>
@@ -63,7 +63,7 @@
        <button data-toggle="modal" data-target="#<%= pid %>" type="button" class="btn btn-primary" >
   		<i class="glyphicon glyphicon-pencil"></i>
 	</button>
-	<button type="button" class="btn btn-primary">
+	<button type="button" class="btn btn-danger">
 	 	<i class="glyphicon glyphicon-trash"></i>
 	</button>
       </td>
@@ -242,7 +242,7 @@
             	
             	
              
-              <button type="submit" class="btn btn-default">Submit</button>
+              <button type="submit" class="btn btn-default" style=background-color:forestgreen;color:white>Submit</button>
             </form>
 
 		</div>

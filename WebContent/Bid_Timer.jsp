@@ -67,7 +67,7 @@
       <button type="button" class="btn btn-primary" >
   		<i class="glyphicon glyphicon-pencil"></i>
 	</button>
-	<button type="button" class="btn btn-primary">
+	<button type="button" class="btn btn-danger">
 	 	<i class="glyphicon glyphicon-trash"></i>
 	</button>
       </td>
